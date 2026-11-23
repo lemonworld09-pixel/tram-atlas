@@ -1,0 +1,175 @@
+[gd_scene format=3]
+
+[sub_resource type="StandardMaterial3D" id="Ivory"]
+albedo_color = Color(0.9, 0.84, 0.65, 1)
+roughness = 0.78
+
+[sub_resource type="StandardMaterial3D" id="Red"]
+albedo_color = Color(0.65, 0.13, 0.1, 1)
+roughness = 0.78
+
+[sub_resource type="StandardMaterial3D" id="Glass"]
+albedo_color = Color(0.09, 0.19, 0.21, 1)
+roughness = 0.78
+
+[sub_resource type="StandardMaterial3D" id="Charcoal"]
+albedo_color = Color(0.12, 0.15, 0.15, 1)
+roughness = 0.78
+
+[sub_resource type="StandardMaterial3D" id="Light"]
+albedo_color = Color(1, 0.85, 0.47, 1)
+roughness = 0.78
+
+[sub_resource type="BoxMesh" id="ChassisMesh"]
+material = SubResource("Charcoal")
+size = Vector3(2.37, 0.48, 11.3)
+
+[sub_resource type="BoxMesh" id="BodyMesh"]
+material = SubResource("Red")
+size = Vector3(2.48, 1.18, 12.3)
+
+[sub_resource type="BoxMesh" id="CabMesh"]
+material = SubResource("Ivory")
+size = Vector3(2.43, 1.55, 12.18)
+
+[sub_resource type="BoxMesh" id="RoofMesh"]
+material = SubResource("Ivory")
+size = Vector3(2.54, 0.24, 12.35)
+
+[sub_resource type="BoxMesh" id="WindowMesh"]
+material = SubResource("Glass")
+size = Vector3(0.04, 1.1, 1.07)
+
+[sub_resource type="BoxMesh" id="FrontWindowMesh"]
+material = SubResource("Glass")
+size = Vector3(2.08, 0.95, 0.05)
+
+[sub_resource type="BoxMesh" id="LampMesh"]
+material = SubResource("Light")
+size = Vector3(0.27, 0.21, 0.04)
+
+[sub_resource type="BoxMesh" id="BogieMesh"]
+material = SubResource("Charcoal")
+size = Vector3(2.1, 0.58, 1.94)
+
+[sub_resource type="BoxMesh" id="BoxMesh"]
+material = SubResource("Charcoal")
+size = Vector3(1.25, 0.26, 2.18)
+
+[node name="Streetcar" type="Node3D"]
+
+[node name="Chassis" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.64, 0)
+mesh = SubResource("ChassisMesh")
+
+[node name="Body" type="MeshInstance3D" parent="."]
+position = Vector3(0, 1.3, 0)
+mesh = SubResource("BodyMesh")
+
+[node name="Cab" type="MeshInstance3D" parent="."]
+position = Vector3(0, 2.55, 0)
+mesh = SubResource("CabMesh")
+
+[node name="Roof" type="MeshInstance3D" parent="."]
+position = Vector3(0, 3.43, 0)
+mesh = SubResource("RoofMesh")
+
+[node name="LeftWindow1" type="MeshInstance3D" parent="."]
+position = Vector3(-1.223, 2.65, -5.31)
+mesh = SubResource("WindowMesh")
+
+[node name="LeftWindow2" type="MeshInstance3D" parent="."]
+position = Vector3(-1.223, 2.65, -3.9799999999999995)
+mesh = SubResource("WindowMesh")
+
+[node name="LeftWindow3" type="MeshInstance3D" parent="."]
+position = Vector3(-1.223, 2.65, -2.6499999999999995)
+mesh = SubResource("WindowMesh")
+
+[node name="LeftWindow4" type="MeshInstance3D" parent="."]
+position = Vector3(-1.223, 2.65, -1.3199999999999994)
+mesh = SubResource("WindowMesh")
+
+[node name="LeftWindow5" type="MeshInstance3D" parent="."]
+position = Vector3(-1.223, 2.65, 0.010000000000000675)
+mesh = SubResource("WindowMesh")
+
+[node name="LeftWindow6" type="MeshInstance3D" parent="."]
+position = Vector3(-1.223, 2.65, 1.3400000000000007)
+mesh = SubResource("WindowMesh")
+
+[node name="LeftWindow7" type="MeshInstance3D" parent="."]
+position = Vector3(-1.223, 2.65, 2.670000000000001)
+mesh = SubResource("WindowMesh")
+
+[node name="LeftWindow8" type="MeshInstance3D" parent="."]
+position = Vector3(-1.223, 2.65, 4.000000000000001)
+mesh = SubResource("WindowMesh")
+
+[node name="LeftWindow9" type="MeshInstance3D" parent="."]
+position = Vector3(-1.223, 2.65, 5.330000000000001)
+mesh = SubResource("WindowMesh")
+
+[node name="LeftCabGlass" type="MeshInstance3D" parent="."]
+position = Vector3(0, 2.65, -6.11)
+mesh = SubResource("FrontWindowMesh")
+
+[node name="LeftHeadlamp" type="MeshInstance3D" parent="."]
+position = Vector3(-0.85, 1.31, -6.17)
+mesh = SubResource("LampMesh")
+
+[node name="LeftBogie" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.32, -3.7)
+mesh = SubResource("BogieMesh")
+
+[node name="RightWindow1" type="MeshInstance3D" parent="."]
+position = Vector3(1.223, 2.65, -5.31)
+mesh = SubResource("WindowMesh")
+
+[node name="RightWindow2" type="MeshInstance3D" parent="."]
+position = Vector3(1.223, 2.65, -3.9799999999999995)
+mesh = SubResource("WindowMesh")
+
+[node name="RightWindow3" type="MeshInstance3D" parent="."]
+position = Vector3(1.223, 2.65, -2.6499999999999995)
+mesh = SubResource("WindowMesh")
+
+[node name="RightWindow4" type="MeshInstance3D" parent="."]
+position = Vector3(1.223, 2.65, -1.3199999999999994)
+mesh = SubResource("WindowMesh")
+
+[node name="RightWindow5" type="MeshInstance3D" parent="."]
+position = Vector3(1.223, 2.65, 0.010000000000000675)
+mesh = SubResource("WindowMesh")
+
+[node name="RightWindow6" type="MeshInstance3D" parent="."]
+position = Vector3(1.223, 2.65, 1.3400000000000007)
+mesh = SubResource("WindowMesh")
+
+[node name="RightWindow7" type="MeshInstance3D" parent="."]
+position = Vector3(1.223, 2.65, 2.670000000000001)
+mesh = SubResource("WindowMesh")
+
+[node name="RightWindow8" type="MeshInstance3D" parent="."]
+position = Vector3(1.223, 2.65, 4.000000000000001)
+mesh = SubResource("WindowMesh")
+
+[node name="RightWindow9" type="MeshInstance3D" parent="."]
+position = Vector3(1.223, 2.65, 5.330000000000001)
+mesh = SubResource("WindowMesh")
+
+[node name="RightCabGlass" type="MeshInstance3D" parent="."]
+position = Vector3(0, 2.65, 6.11)
+mesh = SubResource("FrontWindowMesh")
+
+[node name="RightHeadlamp" type="MeshInstance3D" parent="."]
+position = Vector3(0.85, 1.31, -6.17)
+mesh = SubResource("LampMesh")
+
+[node name="RightBogie" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.32, 3.7)
+mesh = SubResource("BogieMesh")
+
+[node name="RoofEquipment" type="MeshInstance3D" parent="."]
+position = Vector3(0, 3.68, 0)
+mesh = SubResource("BoxMesh")

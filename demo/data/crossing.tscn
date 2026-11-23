@@ -1,0 +1,56 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://addons/tram_atlas/route_player.gd" id="1_mqkva"]
+
+[sub_resource type="Curve3D" id="Curve3D_7msrv"]
+bake_interval = 1.0
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 3.0022671, 0, 0, 0, 0, 0, 0, -4.0671587, 0, 3.1134622, 0, 0, 0, 0, 0, 0, -46.665295, 0, 4.7813883, 0, 0, 0, 0, 0, 0, -49.51944, 0, 4.8925834, 0, 0, 0, 0, 0, 0, -163.54259, 0, 9.340386, 0, 0, 0, 0, 0, 0, -503.32874, 0, 23.573357, 0, 0, 0, 0, 0, 0, -563.19446, 0, 27.35399, 0, 0, 0, 0, 0, 0, -630.695, 0, 29.689087, 0, 0, 0, 0, 0, 0, -656.8104, 0, 30.689842, 0, 0, 0, 0, 0, 0, -665.4442, 0, 29.021915, 0, 0, 0, 0, 0, 0, -670.0822, 0, 26.575624, 0, 0, 0, 0, 0, 0, -673.29315, 0, 24.129332, 0, 0, 0, 0, 0, 0, -675.4338, 0, 21.68304, 0, 0, 0, 0, 0, 0, -677.00354, 0, 18.903164, 0, 0, 0, 0, 0, 0, -678.2879, 0, 15.567311, 0, 0, 0, 0, 0, 0, -679.28687, 0, 11.675484, 0, 0, 0, 0, 0, 0, -680.0717, 0, 5.559754, 0, 0, 0, 0, 0, 0, -680.3572, 0, -25.463673, 0, 0, 0, 0, 0, 0, -680.4999, 0, -40.91979, 0, 0, 0, 0, 0, 0, -682.7832, 0, -114.75333, 0, 0, 0, 0, 0, 0, -682.85455, 0, -215.49606, 0, 0, 0, 0, 0, 0, -683.9962, 0, -236.28955, 0, 0, 0, 0, 0, 0, -689.0623, 0, -303.1178),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 23
+
+[node name="TransitRoute" type="Node3D" unique_id=434396400]
+script = ExtResource("1_mqkva")
+stop_names = PackedStringArray("Národní divadlo", "Újezd", "Tyršův dům")
+arrivals = PackedInt32Array(36000, 36120, 36240)
+departures = PackedInt32Array(36000, 36120, 36240)
+distances = PackedFloat64Array(0, 631.2756433486938, 1004.6233580112457)
+metadata/gtfs_route_id = "L22"
+metadata/gtfs_trip_id = "22_33955_260831"
+metadata/destination = "Bílá Hora"
+metadata/origin_latitude = 50.081448
+metadata/origin_longitude = 14.414021
+metadata/service_date = "2026-11-23"
+
+[node name="Track" type="Path3D" parent="." unique_id=142040074]
+curve = SubResource("Curve3D_7msrv")
+
+[node name="Vehicle" type="PathFollow3D" parent="Track" unique_id=928498912]
+transform = Transform3D(-0.027329534, 0, 0.9996265, 0, 1, 0, -0.9996265, 0, -0.027329534, 0, 0, 3.0022671)
+rotation_mode = 4
+cubic_interp = false
+loop = false
+
+[node name="Stops" type="Node3D" parent="." unique_id=1914128864]
+
+[node name="01 Národní divadlo" type="Marker3D" parent="Stops" unique_id=1334435463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.0022671)
+metadata/gtfs_stop_id = "U483Z2P"
+metadata/stop_sequence = 27
+metadata/arrival = 36000
+metadata/departure = 36000
+
+[node name="02 Újezd" type="Marker3D" parent="Stops" unique_id=2099380788]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -630.6945, 0, 29.68907)
+metadata/gtfs_stop_id = "U809Z4P"
+metadata/stop_sequence = 28
+metadata/arrival = 36120
+metadata/departure = 36120
+
+[node name="03 Tyršův dům" type="Marker3D" parent="Stops" unique_id=304388533]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -689.0622, 0, -303.1162)
+metadata/gtfs_stop_id = "U138Z2P"
+metadata/stop_sequence = 29
+metadata/arrival = 36240
+metadata/departure = 36240
